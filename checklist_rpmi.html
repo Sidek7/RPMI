@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Checklist · Proyecto Web RPMI (UD2)</title>
+<meta name="description" content="Checklist de la actividad del Proyecto Web · RPMI · UD2" />
+<style>
+  :root{
+    --text:#0b1320; --muted:#4c5672; --paper:#ffffff; --ink:#0b1320;
+    --line:#dfe5f2; --emph:#0E5FFF; --soft:#f6f8fe;
+    --max: 900px;
+  }
+  *{ box-sizing:border-box }
+  html,body{ margin:0; }
+  body{
+    font:15.5px/1.55 system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    color:var(--text); background:var(--soft);
+  }
+  .wrap{ max-width:var(--max); margin:24px auto; background:var(--paper); border:1px solid var(--line); border-radius:10px; padding:22px; }
+  header h1{ font-size:20px; margin:0 0 2px; }
+  header .sub{ color:var(--muted); margin:0 0 12px; }
+  hr{ border:0; border-top:1px solid var(--line); margin:18px 0; }
+
+  .grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+  @media (min-width:760px){ .grid-2{ grid-template-columns:1fr 1fr } }
+
+  label{ font-weight:600; display:block; margin-bottom:4px; }
+  input[type="text"], input[type="email"], textarea{
+    width:100%; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:#fff;
+  }
+  textarea{ min-height:100px; resize:vertical; }
+
+  table{ width:100%; border-collapse:collapse; }
+  th, td{ border:1px solid var(--line); padding:8px 10px; vertical-align:top; }
+  thead th{ background:#f3f6ff; font-size:14px; }
+  tbody td:first-child, thead th:first-child{ width:38px; text-align:center; }
+  tbody td:nth-child(3), tbody td:nth-child(4), tbody td:nth-child(5){ width:56px; text-align:center; }
+  .small{ color:var(--muted); font-size:13.5px; }
+
+  .checklist h4{ margin:8px 0 6px; }
+  .chk-item{ display:flex; gap:10px; align-items:flex-start; padding:4px 0; }
+  .chk-item input{ margin-top:2px; }
+
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; }
+  button{
+    appearance:none; border:1px solid var(--line); background:#fff; color:var(--ink);
+    padding:10px 14px; border-radius:8px; cursor:pointer; font-weight:600;
+  }
+  button.primary{ border-color:#cbd7ff; background:#eaf0ff; color:#0b1a55; }
+  button:focus{ outline:3px solid #b9d0ff; outline-offset:2px; }
+
+  @media print{
+    body{ background:#fff; }
+    .wrap{ border:none; padding:0; }
+    .actions{ display:none; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Proyecto Web · UD2 — “Diseñar sin límites, construir con sentido”</h1>
+      <p class="sub">Módulo: Realización de Proyectos Multimedia Interactivos (RPMI) · Checklist de seguimiento y coevaluación</p>
+    </header>
+
+    <section aria-labelledby="alumnado">
+      <h3 id="alumnado">Datos del alumnado</h3>
+      <div class="grid grid-2">
+        <div>
+          <label for="alumno">Alumno/a</label>
+          <input id="alumno" type="text" placeholder="Nombre y apellidos" />
+        </div>
+        <div>
+          <label for="proyecto">Web / Proyecto</label>
+          <input id="proyecto" type="text" placeholder="Título o tema de la web" />
+        </div>
+        <div>
+          <label for="fecha">Fecha</label>
+          <input id="fecha" type="text" placeholder="dd/mm/aaaa" />
+        </div>
+        <div>
+          <label for="revisor">Revisor/a (coevaluación)</label>
+          <input id="revisor" type="text" placeholder="Nombre del compañero/a" />
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section aria-labelledby="heuristica">
+      <h3 id="heuristica">1) Evaluación heurística simplificada (0 = no / 1 = parcial / 2 = bien)</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Nº</th><th>Principio de usabilidad</th><th>0</th><th>1</th><th>2</th><th>Comentarios</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-heur">
+        </tbody>
+      </table>
+      <p class="small">Puntúa cada principio y anota ejemplos concretos (qué se ve bien, qué habría que mejorar).</p>
+    </section>
+
+    <hr />
+
+    <section aria-labelledby="elementos">
+      <h3 id="elementos">2) Elementos que debe incluir la web</h3>
+
+      <div class="checklist">
+        <h4>Elementos mínimos (obligatorios)</h4>
+        <div class="chk-item"><input type="checkbox" id="m1"><label for="m1">Estructura completa: <code>header</code>, <code>nav</code>, <code>main</code>, <code>section</code>, <code>footer</code>.</label></div>
+        <div class="chk-item"><input type="checkbox" id="m2"><label for="m2">Jerarquía correcta de encabezados (<code>h1</code>–<code>h3</code>).</label></div>
+        <div class="chk-item"><input type="checkbox" id="m3"><label for="m3">Al menos tres secciones con contenido real.</label></div>
+        <div class="chk-item"><input type="checkbox" id="m4"><label for="m4">Enlaces internos (anclas) y externos funcionales.</label></div>
+        <div class="chk-item"><input type="checkbox" id="m5"><label for="m5">Imágenes o contenido multimedia.</label></div>
+        <div class="chk-item"><input type="checkbox" id="m6"><label for="m6">Estilos CSS: color, tipografía y espaciado.</label></div>
+        <div class="chk-item"><input type="checkbox" id="m7"><label for="m7">Accesibilidad básica: <code>alt</code>, contraste, foco visible.</label></div>
+      </div>
+
+      <div class="checklist">
+        <h4>Elementos recomendados</h4>
+        <div class="chk-item"><input type="checkbox" id="r1"><label for="r1">Diseño adaptable básico (media queries o flex-wrap).</label></div>
+        <div class="chk-item"><input type="checkbox" id="r2"><label for="r2">Elemento interactivo simple (hover, menú desplegable, botón activo).</label></div>
+        <div class="chk-item"><input type="checkbox" id="r3"><label for="r3">Galería o cards (grid/flex) con composición clara.</label></div>
+        <div class="chk-item"><input type="checkbox" id="r4"><label for="r4">Consistencia visual (paleta y fuentes coherentes).</label></div>
+      </div>
+
+      <div class="checklist">
+        <h4>Elementos avanzados (optativos)</h4>
+        <div class="chk-item"><input type="checkbox" id="a1"><label for="a1">Mapa embebido, vídeo o formulario.</label></div>
+        <div class="chk-item"><input type="checkbox" id="a2"><label for="a2">Componente Bootstrap o efecto CSS avanzado.</label></div>
+        <div class="chk-item"><input type="checkbox" id="a3"><label for="a3">Identidad visual de marca (logo, estilo coherente).</label></div>
+      </div>
+    </section>
+
+    <hr />
+
+    <section aria-labelledby="observ">
+      <h3 id="observ">3) Observaciones y mejoras</h3>
+      <label for="obs">Comentarios generales</label>
+      <textarea id="obs" placeholder="Observaciones del alumno/a o del revisor/a..."></textarea>
+    </section>
+
+    <div class="actions">
+      <button class="primary" onclick="window.print()">Imprimir / Guardar PDF</button>
+
+    </div>
+  </div>
+
+<script>
+  const principios = [
+    ["Claridad y visibilidad","Se entiende qué puede hacer el usuario y a dónde ir."],
+    ["Consistencia visual","Colores, fuentes y botones mantienen un estilo uniforme."],
+    ["Jerarquía y prioridad","El contenido importante destaca y se lee con facilidad."],
+    ["Feedback visual","Botones/enlaces muestran cambio al hover o al hacer clic."],
+    ["Legibilidad y accesibilidad","Buen contraste, tipografía adecuada, 'alt' en imágenes."],
+    ["Simplicidad","No hay elementos innecesarios, todo tiene un propósito."]
+  ];
+
+  const tbody = document.getElementById('tabla-heur');
+  principios.forEach((p, idx) => {
+    const tr = document.createElement('tr');
+    const num = document.createElement('td'); num.textContent = idx+1;
+
+    const desc = document.createElement('td');
+    const b = document.createElement('strong'); b.textContent = p[0] + ": ";
+    desc.appendChild(b);
+    desc.append(document.createTextNode(p[1]));
+
+    const makeRadio = (val) => {
+      const td = document.createElement('td');
+      const id = `h${idx}_${val}`;
+      const input = Object.assign(document.createElement('input'), {type:'radio', name:`h${idx}`, id, value:String(val)});
+      td.appendChild(input);
+      return td;
+    };
+
+    const cmt = document.createElement('td');
+    const inp = Object.assign(document.createElement('input'), {type:'text', placeholder:'Ejemplos / notas'});
+    cmt.appendChild(inp);
+
+    tr.appendChild(num);
+    tr.appendChild(desc);
+    tr.appendChild(makeRadio(0));
+    tr.appendChild(makeRadio(1));
+    tr.appendChild(makeRadio(2));
+    tr.appendChild(cmt);
+    tbody.appendChild(tr);
+  });
+
+  const val = sel => document.querySelector(sel)?.value?.trim() || "";
+  const chk = id => document.getElementById(id)?.checked || false;
+  const radVal = (name) => {
+    const r = document.querySelector(`input[name="${name}"]:checked`);
+    return r ? Number(r.value) : null;
+  };
+
+  function recogerDatos(){
+    const heur = principios.map((p, i) => ({
+      principio: p[0],
+      descripcion: p[1],
+      valor: radVal(`h${i}`),
+      comentario: document.querySelector(`#tabla-heur tr:nth-child(${i+1}) td:last-child input`)?.value || ""
+    }));
+
+    const data = {
+      alumno: val("#alumno"),
+      proyecto: val("#proyecto"),
+      fecha: val("#fecha"),
+      revisor: val("#revisor"),
+      heuristica: heur,
+      minimos: { m1:chk("m1"), m2:chk("m2"), m3:chk("m3"), m4:chk("m4"), m5:chk("m5"), m6:chk("m6"), m7:chk("m7") },
+      recomendados: { r1:chk("r1"), r2:chk("r2"), r3:chk("r3"), r4:chk("r4") },
+      avanzados: { a1:chk("a1"), a2:chk("a2"), a3:chk("a3") },
+      observaciones: val("#obs"),
+      timestamp: new Date().toISOString()
+    };
+    return data;
+  }
+
+  function descargarJSON(){
+    const data = recogerDatos();
+    const blob = new Blob([JSON.stringify(data, null, 2)], {type:"application/json"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = `checklist_rpmi_${(data.alumno||"alumno").replace(/\\s+/g,"_")}.json`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
+  function generarCorreo(){
+    const data = recogerDatos();
+    const to = "sidek7@gmail.com"; // ← SUSTITUYE por tu correo
+    const asunto = encodeURIComponent(`RPMI UD2 · Checklist ${data.alumno || ""} – ${data.proyecto || ""}`);
+    const resumenHeur = data.heuristica.map(h => `- ${h.principio}: ${h.valor ?? "s/g"} (${h.comentario||"-"})`).join("%0D%0A");
+    const cuerpo = encodeURIComponent(
+`Alumno/a: ${data.alumno}
+Proyecto: ${data.proyecto}
+Fecha: ${data.fecha}
+Revisor/a: ${data.revisor}
+
+[Heurística 0/1/2]
+${decodeURIComponent(resumenHeur)}
+
+Mínimos: ${Object.values(data.minimos).filter(Boolean).length} / 7
+Recomendados: ${Object.values(data.recomendados).filter(Boolean).length} / 4
+Avanzados: ${Object.values(data.avanzados).filter(Boolean).length} / 3
+
+Observaciones:
+${data.observaciones || "-"}
+`
+    );
+    window.location.href = `mailto:${to}?subject=${asunto}&body=${cuerpo}`;
+  }
+</script>
+</body>
+</html>
