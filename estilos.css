@@ -17,3 +17,10 @@ section h2 {
   border-left: 4px solid var(--bs-primary);
   padding-left: 0.5rem;
 }
+
+.viewer-oscuro {
+  width: 100%;
+  height: 420px;
+  background: linear-gradient(160deg, #0f0f0f 0%, #242424 100%);
+  border-radius: 10px;
+}
