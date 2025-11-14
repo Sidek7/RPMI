@@ -1,0 +1,19 @@
+:root {
+  /* Ejemplo de personalización suave de Bootstrap */
+  --bs-primary: #ff6b3d;
+  --bs-info: #0dcaf0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+header {
+  /* pequeño degradado en el header */
+  background: linear-gradient(135deg, var(--bs-primary), #6610f2);
+}
+
+section h2 {
+  border-left: 4px solid var(--bs-primary);
+  padding-left: 0.5rem;
+}
